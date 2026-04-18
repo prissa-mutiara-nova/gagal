@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Perpus SMKN 1 Ciomas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><i class="fas fa-book-reader"></i> E-<span>Perpus</span></div>
+            <div class="school-tag">SMKN 1 Ciomas</div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="lib-header">
+            <h1>Katalog Perpustakaan</h1>
+            <p>Pilih buku, isi data, dan kelola peminjamanmu dengan mudah.</p>
+        </header>
+
+        <div class="book-grid" id="book-container"></div>
+
+        <section class="history-section">
+            <h2><i class="fas fa-history"></i> Riwayat Peminjaman</h2>
+            <div class="table-container">
+                <table id="history-table">
+                    <thead>
+                        <tr>
+                            <th>Siswa</th>
+                            <th>Buku</th>
+                            <th>Tgl Pinjam</th>
+                            <th>Tgl Kembali</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="modalPinjam" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Form Peminjaman</h3>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <form id="formPinjam">
+                <input type="hidden" id="bookId">
+                <div class="input-group">
+                    <label>Buku yang dipilih</label>
+                    <input type="text" id="bookTitle" readonly>
+                </div>
+                <div class="input-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="namaSiswa" required placeholder="Nama Anda...">
+                </div>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label>Kelas</label>
+                        <input type="text" id="kelasSiswa" required placeholder="Contoh: XI PPLG 1">
+                    </div>
+                    <div class="input-group">
+                        <label>Batas Kembali</label>
+                        <input type="date" id="tglKembali" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-confirm">Konfirmasi Pinjam</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
